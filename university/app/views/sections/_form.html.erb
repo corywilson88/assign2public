@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :course_id %>
-    <%= form.collection_check_boxes :course_id, Course.all, :id, :name %>
+    <%= form.collection_select :course_id, Course.all, :id, :name %>
   </div>
 
   <div class="actions">

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Building name:</strong>
+  <%= @office.building_name %>
+</p>
+
+<p>
+  <strong>Floor number:</strong>
+  <%= @office.floor_number %>
+</p>
+
+<ol>
+  <strong>Room number:</strong>
+  <%= @office.room_number %>
+</ol>
+
+<ol>
+  <strong>Teacher:</strong>
+  <% if @office.teacher != nil %>
+  <%= Teacher.where(office_id: @office.id).first.name if Teacher.find_by(office_id: @office.id) %>
+  <% else %>
+  <%= "None" %>
+  <% end %>
+</ol>
+
+<%= link_to 'Edit', edit_office_path(@office) %> |
+<%= link_to 'Back', offices_path %>
